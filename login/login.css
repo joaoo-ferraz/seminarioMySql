@@ -1,0 +1,58 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;  
+    background-image: linear-gradient(-45deg, black, gray);
+}
+
+.tela-login{
+    background-color: rgba(256, 0, 0, 0.6);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 80px;
+    border-radius: 15px;
+    color: white;
+}
+
+.acesso-login{
+    padding: 15px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+
+.botao-login {
+    display: inline-block;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    padding: 15px;
+    width: 220px;
+    cursor: pointer;
+}
+
+.botao-login span {
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.botao-login span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.botao-login:hover span {
+    padding-right: 25px;
+}
+
+.botao-login:hover span:after {
+    opacity: 1;
+    right: 0;
+}
