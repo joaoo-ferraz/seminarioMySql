@@ -6,7 +6,7 @@ session_start();
     {
         include_once('../cadastro/config.php');
 
-        $email = $_POST['email'];
+        $email = mysqli_real_escape_string($conexao, $_POST['email']);
         $senha = $_POST['senha'];
 
         /*

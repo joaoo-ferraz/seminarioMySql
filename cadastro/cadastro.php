@@ -12,6 +12,12 @@ $telefone = $_POST['telefone'];
 $genero = $_POST['genero']; 
 $dataNascimento = $_POST['dataNascimento']; 
 
+$checkEmail = mysqli_query($conexao, "SELECT * FROM usuarios WHERE email = '$email'");
+
+if(mysqli_num_rows($checkEmail) > 0) {
+        header('Location: ../login/fail.html');
+    } else {
+
 $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, email, senha, telefone, genero, dataNascimento, endereco)
 VALUES ('$nome', '$email', '$senha', '$telefone', '$genero', '$dataNascimento', '$endereco')");
 
@@ -24,6 +30,7 @@ if($result) {
         echo "Erro ao cadastrar!";
         echo "Erro: " . mysqli_error($conexao);
         echo '<br><br>';
+    }
     }
 }
 
